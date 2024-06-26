@@ -1,0 +1,38 @@
+<h2 class="text-center my-5">Employees</h2>
+
+<div class="card">
+
+    <div class="card-header">
+        <p class="fs-5">Overview</p>
+    </div>
+
+    <div class="card-body">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Position</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let employee of employees">
+                    <td>{{employee.id}}</td>
+                    <td>{{employee.firstName}}</td>
+                    <td>{{employee.lastName}}</td>
+                    <td>{{employee.phone}}</td>
+                    <td>{{employee.email}}</td>
+                    <td>{{employee.position}}</td>
+                    <td>
+                        <button class="btn btn-primary btn-sm m-2" (click)="editEmployee(employee.id)">Edit</button>
+                        <button class="btn btn-danger btn-sm" (click)="deleteEmployee(employee.id)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
